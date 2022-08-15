@@ -3,14 +3,10 @@
  * @return {boolean}
  */
 var isMonotonic = function(nums) {
-    let arr = nums.join('');
-    let asc = nums.sort((a,b) => a - b).join('');
-    let desc = nums.sort((a,b) => b - a).join('');
-    // console.log(nums,asc, desc)
+    let asc = [...nums].sort((a,b) => a - b);
+    let desc = [...nums].sort((a,b) => b - a);
     
-    if((arr === asc) || (arr === desc)){
-        return true;
-    } else {
-        return false;
-    }
+    return ((asc.toString() === nums.toString()) || (desc.toString() === nums.toString()))
+    
+    // return (JSON.stringify(asc) === JSON.stringify(nums)) || (JSON.stringify(desc) === JSON.stringify(nums));
 };
