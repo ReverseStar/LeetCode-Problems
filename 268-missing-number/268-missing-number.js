@@ -3,12 +3,15 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
+    let sorted = nums.sort((a,b) => a-b);
     
-    let sum = nums.reduce((acc,curr) => {
-        return acc + curr;
-    },0);
-
-    let len = nums.length; 
-    let expected = (len*(len+1)) / 2;
-    return expected - sum;
+    let num = 0;
+    for(let i=0;i<sorted.length;i++){
+        if(i !== sorted[i]){
+           return i;
+           }
+    }
+    return (sorted.at(-1) + 1)
+    
+    // console.log(sorted)
 };
