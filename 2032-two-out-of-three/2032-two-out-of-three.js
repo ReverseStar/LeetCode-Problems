@@ -5,17 +5,13 @@
  * @return {number[]}
  */
 var twoOutOfThree = function(nums1, nums2, nums3) {
-    let num1 = [...new Set(nums1)];
-    let num2 = [...new Set(nums2)];
-    let num3 = [...new Set(nums3)];
-    console.log(num1,num2,num3);
+    let num = [...new Set(nums1), ...new Set(nums2), ...new Set(nums3)];
     let arr = [];
-    let aaa = [...num1, ...num2, ...num3];
-    let aa = _.countBy(aaa);
+    let unq = _.countBy(num);
     
-    let keys = Object.keys(aa);
+    let keys = Object.keys(unq);
     keys.forEach(key => {
-        if(aa[key] >= 2){
+        if(unq[key] >= 2){
             arr.push(key)
         }
     })
