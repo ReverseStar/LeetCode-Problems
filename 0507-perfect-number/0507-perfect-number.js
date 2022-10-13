@@ -14,8 +14,9 @@ var checkPerfectNumber = function(num) {
         return acc + curr;
     },0)
     // console.log(sum,num)
-    if(sum !== num) return false;
-    else{
-        return true;
-    }
+    // if(sum !== num) return false;
+    // else{
+    //     return true;
+    // }
+    return (sum === num)
 };
