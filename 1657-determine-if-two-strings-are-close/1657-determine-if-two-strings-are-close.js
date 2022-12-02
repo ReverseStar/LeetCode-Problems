@@ -21,14 +21,14 @@ var closeStrings = function(word1, word2) {
     let freq1 = _.countBy(w1);
     let freq2 = _.countBy(w2);
 
-    let f1 = Object.values(freq1);
-    let f2 = Object.values(freq2);
+    let val1 = Object.values(freq1);
+    let val2 = Object.values(freq2);
 
     
-    let ff = sorted(f1);
-    let fff = sorted(f2);
-    return _.isEqual(ff,fff);
+    let sorted1 = sorted(val1);
+    let sorted2 = sorted(val2);
     
+    return _.isEqual(sorted1,sorted2);
 };
 
 const sorted = (nums) => {
