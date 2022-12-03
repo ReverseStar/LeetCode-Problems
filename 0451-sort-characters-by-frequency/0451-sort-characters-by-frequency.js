@@ -9,6 +9,7 @@ var frequencySort = function(s) {
     let vals = Object.entries(arr).sort((a,b) => b[1] - a[1]);
     // console.log(vals);
     
+    //Cheat for sorting based on frequency
     let str = vals.map(([ch,freq]) => {
         return ch.repeat(freq);
     })
