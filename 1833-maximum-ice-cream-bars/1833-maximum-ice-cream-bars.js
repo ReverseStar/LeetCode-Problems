@@ -15,6 +15,6 @@ var maxIceCream = function(costs, coins) {
             cnt++;
         }
     }
-    console.log(cnt);
+    // console.log(cnt);
     return cnt;
 };
