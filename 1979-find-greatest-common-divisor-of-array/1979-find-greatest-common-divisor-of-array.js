@@ -5,7 +5,7 @@
 var findGCD = function(nums) {
     let mx = Math.max(...nums);
     let mn = Math.min(...nums);
-    console.log(mx,mn);
+    // console.log(mx,mn);
     
     let ans = 1;
     for(let i=mn; i>= 0; i--){
