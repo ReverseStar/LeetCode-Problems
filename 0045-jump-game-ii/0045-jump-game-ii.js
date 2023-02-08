@@ -13,7 +13,7 @@ var jump = function(nums) {
         for(let i=0; i<=right; i++){
             mx = Math.max(mx, i + nums[i]);
         }
-        left = right+1;
+        left = right;
         right = mx;
         jump++;
     }
