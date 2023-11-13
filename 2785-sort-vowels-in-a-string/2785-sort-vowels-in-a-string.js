@@ -11,7 +11,6 @@ var sortVowels = function(s) {
             arr.push(str[ch]);
         }
     }
-    // console.log(arr)
     
     arr.sort();
     
