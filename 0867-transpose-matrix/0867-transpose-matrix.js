@@ -18,3 +18,5 @@ var transpose = function(matrix) {
     
     return res;
 };
+
+//complexity O(n * m); 
