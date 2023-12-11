@@ -3,26 +3,21 @@
  * @return {number}
  */
 var findSpecialInteger = function(arr) {
-    let freq = {};
-    for(let char of arr){
-        if(freq[char] === undefined){
-            freq[char] = 0;
-        }
-        freq[char]++;
+  let freq = {};
+  let maxCount = 0;
+  let res;
+
+  for (const char of arr) {
+    if (!freq[char]) {
+      freq[char] = 0;
     }
-    
-    // console.log(freq);
-    
-    let res = Object.entries(freq);
-    // console.log(res);
-    
-     let s = res.sort((a,b) => b[1] - a[1]);
-    // console.log(s);
-    
-    let arr2 = [];
-    for(let i=0; i<s.length; i++){
-        arr2.push(s[i][0]);
+    freq[char]++;
+
+    if (freq[char] > maxCount) {
+      maxCount = freq[char];
+      res = char;
     }
-    // console.log(arr2)
-    return arr2[0]
+  }
+
+    return res
 };
