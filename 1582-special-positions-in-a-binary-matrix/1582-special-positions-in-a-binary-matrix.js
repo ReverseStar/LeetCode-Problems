@@ -4,37 +4,27 @@
  */
 var numSpecial = function(mat) {
     let res = 0;
-    let len = mat[0].length;
+    let m = mat.length;
+    let n = mat[0].length;
     
-    for(let row=0; row<mat.length; row++){
-        for(let col=0; col<len; col++){
-            if(mat[row][col] === 0){
-                continue;
-            }
-            
-            let isValid = true;
-            
-            //check Row for if there's more 1
-            for(let r=0; r<mat.length; r++){
-                if(r !== row && mat[r][col] === 1){
-                    isValid = false;
-                    break;
-                }
-            }
-            
-            //check Column for if there's more 1
-            for(let c=0; c<len; c++){
-                if(c !== col && mat[row][c] === 1){
-                    isValid = false;
-                    break;
-                }
-            }
-            
-            if(isValid){
-                res++;
+    let rowCnt = new Array(m).fill(0);
+    let colCnt = new Array(n).fill(0);
+    
+    for(let row=0; row<m; row++){
+        for(let col=0; col<n; col++){
+            if(mat[row][col] === 1){
+                rowCnt[row]++;
+                colCnt[col]++;
             }
         }
     }
     
+    for(let row=0; row<m; row++){
+        for(let col=0; col<n; col++){
+            if(mat[row][col] === 1 && rowCnt[row] === 1 && colCnt[col] === 1){
+                res++;
+            }
+        }
+    }
     return res;
 };
