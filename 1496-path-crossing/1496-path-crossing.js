@@ -27,7 +27,7 @@ var isPathCrossing = function(path) {
 /*
     direction 
         N
-    W       S   
+    W --|-- S 
         E
         
 */
