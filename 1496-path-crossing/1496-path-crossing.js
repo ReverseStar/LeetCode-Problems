@@ -23,3 +23,11 @@ var isPathCrossing = function(path) {
     }
     return false;
 };
+
+/*
+    direction 
+        N
+    W       S   
+        E
+        
+*/
