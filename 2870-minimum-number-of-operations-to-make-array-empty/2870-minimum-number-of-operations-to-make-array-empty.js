@@ -4,7 +4,7 @@
  */
 var minOperations = function(nums) {
     let count = _.countBy(nums);
-    console.log(count);
+    // console.log(count);
     let res = 0;
     for(let [key,value] of Object.entries(count)){
         let val = value;
