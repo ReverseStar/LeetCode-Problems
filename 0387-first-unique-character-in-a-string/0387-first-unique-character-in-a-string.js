@@ -8,7 +8,6 @@ var firstUniqChar = function(s) {
     for(let i of s){
         freq[i] = (freq[i] || 0) + 1;
     }
-    let en = Object.entries(freq);
     
     for(let i in freq){
         if(freq[i] === 1){
