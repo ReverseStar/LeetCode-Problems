@@ -9,7 +9,7 @@ var missingNumber = function(nums) {
     for(let i=0;i<sorted.length;i++){
         if(i !== sorted[i]){
            return i;
-           }
+          }
     }
     return (sorted.at(-1) + 1)
     
