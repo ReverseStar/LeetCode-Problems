@@ -4,8 +4,15 @@
  */
 var missingNumber = function(nums) {
     let n = nums.length;
-    let oSum = (n*(n+1)) / 2;
-    let pSum = nums.reduce((acc,curr) => acc + curr, 0);
+    let res = 0;
     
-    return oSum - pSum;
+    for(let i=1; i<=n; i++){
+        res ^= i;
+    }
+    for(let i=0; i<nums.length; i++){
+        res ^= nums[i];
+    }
+    
+    console.log(res);
+    return res;
 };
