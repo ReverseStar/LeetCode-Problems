@@ -5,9 +5,18 @@
 var sortedSquares = function(nums) {
     let res = [];
     
-    for(let num of nums){
-        res.push(num * num);
+    let left = 0;
+    let right = nums.length - 1;
+    
+    while(left <= right){
+        if((nums[left]) * (nums[left]) > (nums[right]) * (nums[right])){
+            res.push(nums[left] * nums[left]);
+            left++;
+        } else {
+            res.push(nums[right] * nums[right]);
+            right--;
+        }
     }
     
-    return res.sort((a,b) => a - b);
+    return res.toReversed();
 };
